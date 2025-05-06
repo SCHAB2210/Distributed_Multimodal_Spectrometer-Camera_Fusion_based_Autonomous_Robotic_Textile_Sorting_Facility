@@ -1,15 +1,24 @@
 
-# MAS500 – Model Architectures by Task
+# MAS500 Project – Model Architectures by Task
 
-This repository includes models developed for textile classification based on NIR spectra, camera images, and sensor fusion.
+This repository contains deep learning models for textile classification using NIR spectral data, camera images, and feature fusion techniques.
 
 ---
 
-##  Setup
+##  Quick Setup
 
-Install all required dependencies:
+Follow these steps to clone the project and install dependencies:
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/SCHAB2210/handover_MAS500.git
+cd handover_MAS500
+
+# 2. Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install required packages
 pip install -r requirements.txt
 ```
 
@@ -17,7 +26,7 @@ pip install -r requirements.txt
 
 ---
 
-##  Model Architectures by Task
+## Model Architectures by Task
 
 | Task                        | Architecture     | Link                                           |
 |----------------------------|------------------|------------------------------------------------|
@@ -29,7 +38,7 @@ pip install -r requirements.txt
 | SO2 CAM – 2.2 Color HR     | CCMC-HR-3        | [SO2.2](./SO2/SO2.2/)                          |
 | SO2 CAM – 2.3 Material LR+SR | CCMC-LR-G-GAN-2 | [SO2.3](./SO2/SO2.3/)                          |
 | SO2 CAM – 2.4 Material HR  | CCMC-LR-G-2      | [SO2.4](./SO2/SO2.4/)                          |
-| SO2 CAM – 2.5 Both LR+SR  | CCMC-LR-GAN-6    | [SO2.5](./SO2/SO2.5/)                          |                
+| SO2 CAM – 2.5 Both LR+SR  | CCMC-LR-GAN-6    | [SO2.5](./SO2/SO2.5/)                          |
 | SO2 CAM – 2.6 Both HR      | CCMC-HR-6        | [SO2.6](./SO2/SO2.6/)                          |
 | SO3 FUSION – 3.1 Color SP+HR | FCMC-C          | [SO3.1](./SO3/SO3.1/)                          |
 | SO3 FUSION – 3.2 Material SP+HR | FCMC-M      | [SO3.2](./SO3/SO3.2/)                          |
