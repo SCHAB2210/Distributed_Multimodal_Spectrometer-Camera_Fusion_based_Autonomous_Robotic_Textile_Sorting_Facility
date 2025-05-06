@@ -40,6 +40,9 @@ pip install -r requirements.txt
 | SO2 CAM – 2.4 Material HR  | CCMC-LR-G-2      | [SO2.4](./SO2/SO2.4/)                          |
 | SO2 CAM – 2.5 Both LR+SR  | CCMC-LR-GAN-6    | [SO2.5](./SO2/SO2.5/)                          |
 | SO2 CAM – 2.6 Both HR      | CCMC-HR-6        | [SO2.6](./SO2/SO2.6/)                          |
+| SO3 FUSION – 3.1 Color NIR+CAM | NCFCC          | [SO3.1](./SO3/SO3.1/)                          |
+| SO3 FUSION – 3.2 Material NIR+CAM | NCFMC      | [SO3.2](./SO3/SO3.2/)                          |
+| SO3 FUSION – 3.3 Both NIR+CAM | NCFCMC         | [SO3.3](./SO3/SO3.3/)                          |
 | SO3 FUSION – 3.1 Color SP+HR | FCMC-C          | [SO3.1](./SO3/SO3.1/)                          |
 | SO3 FUSION – 3.2 Material SP+HR | FCMC-M      | [SO3.2](./SO3/SO3.2/)                          |
 | SO3 FUSION – 3.3 Both SP+HR | FCMC-CM         | [SO3.3](./SO3/SO3.3/)                          |
