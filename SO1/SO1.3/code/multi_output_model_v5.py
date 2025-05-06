@@ -12,9 +12,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report, f1_score  
 from datetime import datetime  
 VERSION = 20
-# =============================================================================
+
 # PATH CONFIGURATION
-# =============================================================================
 def get_next_version():
     """Get next available version number by checking existing files."""
     base_dir = r'C:\Users\devTe\Desktop\TextileSorting\NIR\results\multi_output_model_combined_v5'
@@ -38,9 +37,7 @@ NOISE_FACTOR = 0.001   # Reduced noise
 DROPOUT_RATE = 0.4    # Reduced dropout
 L2_REG = 0.0005      # Reduced L2 regularization
 
-# =============================================================================
 # DATA LOADING FUNCTIONS
-# =============================================================================
 def load_combined_data():
     """Load combined dataset with wavelengths 900-1700nm."""
     df = pd.read_csv(COMBINED_CSV_PATH)
@@ -61,9 +58,8 @@ def load_training_metrics(version=VERSION):
     print(f"Loaded training metrics from {csv_path}")
     return metrics_df
 
-# =============================================================================
+
 # PREPROCESSING FUNCTION
-# =============================================================================
 def preprocess_data():
     """Loads data and splits into train/val/test sets for a single categorical output (0-5)."""
     df = pd.read_csv(COMBINED_CSV_PATH)
@@ -87,9 +83,7 @@ def preprocess_data():
 
     return X_train, X_val, X_test, y_train, y_val, y_test
 
-# =============================================================================
-# MODEL DEFINITION: SINGLE-OUTPUT MULTICLASS CLASSIFICATION [class:0-5]
-# =============================================================================
+# MODEL DEFINITION
 def residual_block(x, filters, kernel_size=3, l2_reg=L2_REG):
     """Enhanced residual block with more regularization"""
     shortcut = x
@@ -177,9 +171,7 @@ def build_single_output_model(input_shape):
 
     return model
 
-# =============================================================================
 # PLOTTING FUNCTIONS
-# =============================================================================
 def smooth_curve(points, factor=0.9):
     """Exponential moving average smoothing."""
     smoothed_points = []
@@ -283,9 +275,7 @@ def plot_combined_confusion_matrix(y_color_true, y_material_true, y_color_pred, 
         print("Combined confusion matrix saved at", save_path)
     plt.show()
 
-# =============================================================================
 # CALLBACKS & TRAINING PIPELINE
-# =============================================================================
 class ValidationGapCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         train_loss = logs.get('loss')
@@ -303,9 +293,7 @@ def augment_spectral_data(x, noise_factor=NOISE_FACTOR):
     x = x + noise
     return x
 
-# ---------------------------
 # Warmup Learning Rate Callback
-# ---------------------------
 class WarmUpLearningRateScheduler(tf.keras.callbacks.Callback):
     """
     Warm-up learning rate scheduler: linearly increases the learning rate 
@@ -425,9 +413,7 @@ def get_callbacks():
         metrics_logger
     ]
 
-# =============================================================================
 # MAIN FUNCTION
-# =============================================================================
 def main():
     """Train the model and save metrics to CSV files."""
     print("\n" + "="*80)
@@ -497,9 +483,6 @@ def main():
 
     print("\nTraining complete. Model and results saved.")
     print("="*80)
-    
-    # No plotting here - metrics have been saved to CSV files
-
 
 if __name__ == '__main__':
     main()
