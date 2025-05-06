@@ -1,0 +1,1 @@
+# SO1.2 Material classification using NIR spectrometer features from wavelength range 1400-1700nm.
