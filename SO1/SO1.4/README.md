@@ -21,9 +21,6 @@
 
 ##  How to Run the Model
 
-If you are reusing a script, update the path to this model accordingly.  
-Example (using a modified version of the SO1.3 script):
-
 ```bash
 python ../SO1.3/code/multi_output_model_v5.py --model_path model/best_model.h5
 ```
