@@ -1,0 +1,1 @@
+# SO1.4 Color & Material classification using NIR spectrometer using 8 statistical features from wavelength range 900-1800nm
