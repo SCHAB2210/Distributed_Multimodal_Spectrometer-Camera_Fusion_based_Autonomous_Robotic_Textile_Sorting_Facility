@@ -13,7 +13,7 @@ CLASS_NAMES = {
 
 
 def read_data(file_path):
-    print(f"\n📂 Reading file: {file_path}")
+    print(f"\n Reading file: {file_path}")
 
     # Read CSV file
     df = pd.read_csv(file_path)
@@ -57,7 +57,7 @@ def predict_label(file_path, model):
         class_name = CLASS_NAMES.get(predicted_class, "Unknown")
 
         print(f"🎯 Predicted label: {predicted_class} → {class_name}")
-        return str(predicted_class)  # ✅ return number, not name
+        return str(predicted_class)  #  return number, not name
     except Exception as e:
-        print(f"⚠️ Error during prediction: {e}")
+        print(f" Error during prediction: {e}")
         return ''
