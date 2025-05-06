@@ -13,7 +13,7 @@ CLASS_NAMES = {
 
 
 def read_data(file_path):
-    print(f"\n📂 Reading file: {file_path}")
+    print(f"\n Reading file: {file_path}")
 
     # Read CSV file
     df = pd.read_csv(file_path)
@@ -40,9 +40,9 @@ def read_data(file_path):
     df_processed = df_processed.abs()  # match `.abs()` used in training
 
     # Debug info
-    print("📏 absorbance length:", df_processed.shape[1])
-    print("🔬 First 5 values:", df_processed.iloc[0, :5].tolist())
-    print("📐 Final shape for model:", df_processed.shape)
+    print(" absorbance length:", df_processed.shape[1])
+    print(" First 5 values:", df_processed.iloc[0, :5].tolist())
+    print(" Final shape for model:", df_processed.shape)
 
     return df_processed
 
@@ -56,8 +56,8 @@ def predict_label(file_path, model):
         predicted_class = int(np.argmax(prediction, axis=1)[0])
         class_name = CLASS_NAMES.get(predicted_class, "Unknown")
 
-        print(f"🎯 Predicted label: {predicted_class} → {class_name}")
-        return str(predicted_class)  # ✅ return number, not name
+        print(f" Predicted label: {predicted_class} → {class_name}")
+        return str(predicted_class)  #  return number, not name
     except Exception as e:
-        print(f"⚠️ Error during prediction: {e}")
+        print(f" Error during prediction: {e}")
         return ''

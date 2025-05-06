@@ -28,10 +28,10 @@ def connect_to_server():
             print(f"🔌 Trying to connect to server at {host}:{port}...")
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((host, port))
-            print("✅ Connected to server.")
+            print(" Connected to server.")
             return s
         except socket.error as e:
-            print(f"⛔ Connection failed: {e}. Retrying in 5 seconds...")
+            print(f" Connection failed: {e}. Retrying in 5 seconds...")
             time.sleep(5)
 
 # === MAIN LOOP ===
@@ -51,18 +51,18 @@ def send_prediction():
                             os.remove(file)
                             print(f"🗑️ Removed: {file}")
                     except PermissionError:
-                        print(f"⚠️ File {file} is in use. Retrying...")
+                        print(f" File {file} is in use. Retrying...")
                     except Exception as e:
-                        print(f"⚠️ Unexpected error processing {file}: {e}")
+                        print(f" Unexpected error processing {file}: {e}")
                 time.sleep(0.5)
         except Exception as e:
-            print(f"⚠️ Socket error during communication: {e}")
+            print(f" Socket error during communication: {e}")
             s.close()
-            print("🔁 Reconnecting in 5 seconds...")
+            print(" Reconnecting in 5 seconds...")
             time.sleep(5)
 
 if __name__ == "__main__":
     try:
         send_prediction()
     except KeyboardInterrupt:
-        print("🛑 Interrupted by user. Exiting...")
+        print(" Interrupted by user. Exiting...")

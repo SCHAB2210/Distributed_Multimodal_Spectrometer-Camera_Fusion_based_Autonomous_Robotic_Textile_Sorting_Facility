@@ -1,0 +1,6 @@
+path: C:\Users\amirs\Desktop\MAS500\MAS500\detection  # Path to dataset folder
+train: images  # YOLO will automatically split this (80% train, 20% val)
+val: images    # Same folder as train (split happens internally)
+
+nc: 3  # Number of classes
+names: ["Black","White","Other"]  # Class name
