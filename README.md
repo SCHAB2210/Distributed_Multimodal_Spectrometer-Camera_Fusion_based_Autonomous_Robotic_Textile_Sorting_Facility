@@ -43,5 +43,5 @@ pip install -r requirements.txt
 | SO3 FUSION – 3.1 Color NIR+CAM | NCFCC          | [SO3.1](./SO3/SO3.1/)                          |
 | SO3 FUSION – 3.2 Material NIR+CAM | NCFMC      | [SO3.2](./SO3/SO3.2/)                          |
 | SO3 FUSION – 3.3 Both NIR+CAM | NCFCMC         | [SO3.3](./SO3/SO3.3/)                          |
-| Ablation study  – CAM |         | [SO2](./SO2/Ablation study/)                          |
-| yolo  – CAM |         | [SO2](./SO2/YOLO/)                          |
+| Ablation study  – CAM |         | [Ablation study](./SO2/Ablation%20study%20/)                          |
+| yolo  – CAM |         | [Yolo](./SO2/YOLO/)                          |
