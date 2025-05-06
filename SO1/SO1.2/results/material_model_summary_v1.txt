@@ -1,0 +1,43 @@
+Model: "model"
+___________________________________________________________________________________________________________________________________
+ Layer (type)                                         Output Shape                                    Param #           Trainable  
+===================================================================================================================================
+ input_1 (InputLayer)                                 [(None, 122, 1)]                                0                 Y          
+                                                                                                                                   
+ conv1d (Conv1D)                                      (None, 122, 32)                                 192               Y          
+                                                                                                                                   
+ batch_normalization (BatchNormalization)             (None, 122, 32)                                 128               Y          
+                                                                                                                                   
+ max_pooling1d (MaxPooling1D)                         (None, 61, 32)                                  0                 Y          
+                                                                                                                                   
+ dropout (Dropout)                                    (None, 61, 32)                                  0                 Y          
+                                                                                                                                   
+ conv1d_1 (Conv1D)                                    (None, 61, 64)                                  10304             Y          
+                                                                                                                                   
+ batch_normalization_1 (BatchNormalization)           (None, 61, 64)                                  256               Y          
+                                                                                                                                   
+ max_pooling1d_1 (MaxPooling1D)                       (None, 30, 64)                                  0                 Y          
+                                                                                                                                   
+ dropout_1 (Dropout)                                  (None, 30, 64)                                  0                 Y          
+                                                                                                                                   
+ conv1d_2 (Conv1D)                                    (None, 30, 128)                                 24704             Y          
+                                                                                                                                   
+ batch_normalization_2 (BatchNormalization)           (None, 30, 128)                                 512               Y          
+                                                                                                                                   
+ max_pooling1d_2 (MaxPooling1D)                       (None, 15, 128)                                 0                 Y          
+                                                                                                                                   
+ dropout_2 (Dropout)                                  (None, 15, 128)                                 0                 Y          
+                                                                                                                                   
+ flatten (Flatten)                                    (None, 1920)                                    0                 Y          
+                                                                                                                                   
+ dense (Dense)                                        (None, 256)                                     491776            Y          
+                                                                                                                                   
+ dropout_3 (Dropout)                                  (None, 256)                                     0                 Y          
+                                                                                                                                   
+ dense_1 (Dense)                                      (None, 2)                                       514               Y          
+                                                                                                                                   
+===================================================================================================================================
+Total params: 528,386
+Trainable params: 527,938
+Non-trainable params: 448
+___________________________________________________________________________________________________________________________________

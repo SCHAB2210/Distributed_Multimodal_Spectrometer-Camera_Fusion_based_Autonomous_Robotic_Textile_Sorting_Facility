@@ -1,0 +1,35 @@
+Model: "model"
+___________________________________________________________________________________________________________________________________
+ Layer (type)                                         Output Shape                                    Param #           Trainable  
+===================================================================================================================================
+ input_1 (InputLayer)                                 [(None, 105, 1)]                                0                 Y          
+                                                                                                                                   
+ conv1d (Conv1D)                                      (None, 105, 16)                                 64                Y          
+                                                                                                                                   
+ batch_normalization (BatchNormalization)             (None, 105, 16)                                 64                Y          
+                                                                                                                                   
+ max_pooling1d (MaxPooling1D)                         (None, 52, 16)                                  0                 Y          
+                                                                                                                                   
+ dropout (Dropout)                                    (None, 52, 16)                                  0                 Y          
+                                                                                                                                   
+ conv1d_1 (Conv1D)                                    (None, 52, 32)                                  1568              Y          
+                                                                                                                                   
+ batch_normalization_1 (BatchNormalization)           (None, 52, 32)                                  128               Y          
+                                                                                                                                   
+ max_pooling1d_1 (MaxPooling1D)                       (None, 26, 32)                                  0                 Y          
+                                                                                                                                   
+ dropout_1 (Dropout)                                  (None, 26, 32)                                  0                 Y          
+                                                                                                                                   
+ flatten (Flatten)                                    (None, 832)                                     0                 Y          
+                                                                                                                                   
+ dense (Dense)                                        (None, 64)                                      53312             Y          
+                                                                                                                                   
+ dropout_2 (Dropout)                                  (None, 64)                                      0                 Y          
+                                                                                                                                   
+ dense_1 (Dense)                                      (None, 3)                                       195               Y          
+                                                                                                                                   
+===================================================================================================================================
+Total params: 55,331
+Trainable params: 55,235
+Non-trainable params: 96
+___________________________________________________________________________________________________________________________________
