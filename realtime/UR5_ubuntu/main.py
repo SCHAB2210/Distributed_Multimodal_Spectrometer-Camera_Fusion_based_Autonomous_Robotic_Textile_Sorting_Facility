@@ -11,9 +11,7 @@ import socket
 import math
 import threading
 
-#############################################
 # Receive label from Windows over socket
-#############################################
 
 def init_nir_connection():
     HOST = '192.168.56.101'  # Ubuntu IP (same as used in client)
@@ -47,11 +45,7 @@ def wait_for_label(conn):
         print(f"[NIR] Error reading from socket: {e}")
         return None
 
-#############################################
 # Positions & Classes (for robot control)
-#############################################
-
-# These mappings are still used by the robot commands (from the NIR input)
 TEXTILE_CLASSES = {
     0: "white_cotton",
     1: "black_cotton",
@@ -79,9 +73,7 @@ def get_textile_class(class_number):
 def get_placement_position(class_number):
     return SORTING_POSITIONS.get(class_number)
 
-#############################################
 # Robot Control
-#############################################
 
 ROBOT_IP = "192.168.10.100"
 PORT = 30002
@@ -107,7 +99,7 @@ def move_to_position(x, y, z, roll=0.174, pitch=-0.021, yaw=0.459, blend_radius=
         x, y, z = x / 1000, y / 1000, z / 1000
     command = f"movel(p[{x}, {y}, {z}, {roll}, {pitch}, {yaw}], a=1.2, v=0.25, r={blend_radius})"
     send_command(command)
-    # Reduce sleep time based on blend radius - if blending, we don't need to wait as long
+    # Reduce sleep time based on blend radius
     if blend_radius > 0:
         #print(f"[WAIT] Waiting for blended motion to complete (2s)")
         time.sleep(2)  # Shorter wait for blended motions
@@ -255,16 +247,14 @@ def save_image(image, save_dir, counter):
     filename = os.path.join(save_dir, f"capture_{counter}.png")
     cv2.imwrite(filename, image)
 
-#############################################
 # Global Variables for Threading
-#############################################
 robot_busy = False
 img_counter = 1
 current_nir = None
 
-#############################################
+
 # Robot Command Thread Function
-#############################################
+
 def process_robot_command(world_coords, detection_image, conn, save_dir):
     global img_counter, robot_busy, current_nir
     #print(f"[IMAGE] Saving detection image #{img_counter}")
@@ -358,9 +348,8 @@ def process_robot_command(world_coords, detection_image, conn, save_dir):
     print(f"[SYSTEM] Next textile type received: {get_textile_class(current_nir)} (bin #{current_nir})")
     robot_busy = False
 
-#############################################
 # Main Process
-#############################################
+
 def main():
     global current_nir, robot_busy
     print("[SYSTEM] ===== TEXTILE SORTING SYSTEM STARTUP =====")
