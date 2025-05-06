@@ -16,9 +16,9 @@ Each subfolder corresponds to a specific subtask and contains:
 | Subtask    | Description                        | Folder Link         |
 |------------|------------------------------------|---------------------|
 | SO1.1      | Color classification (900–1400 nm) | [SO1.1](./SO1.1/)   |
-| SO1.2      | Material classification (1300–1700 nm) | [SO1.2](./SO1.2/)   |
+| SO1.2      | Material classification (1400–1700 nm) | [SO1.2](./SO1.2/)   |
 | SO1.3      | Combined color + material          | [SO1.3](./SO1.3/)   |
-| SO1.4      | Best combined model (fine-tuned)   | [SO1.4](./SO1.4/)   |
+| SO1.4      | Color + material (Statistical Features)   | [SO1.4](./SO1.4/)   |
 | data       | Input datasets used for training   | [data](./data/)     |
 
 ---
@@ -33,4 +33,4 @@ Each subfolder corresponds to a specific subtask and contains:
 
 ##  Back to Project Overview
 
-[🔙 Return to Main README](../README.md)
+[ Return to Main README](../README.md)
