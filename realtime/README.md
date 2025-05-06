@@ -8,11 +8,11 @@ This folder contains code to run the real-time classification and pick-and-place
 ##  System Overview
 
 ### Windows (NIR Sensor + Classifier)
-- **label_data.py**: Predicts textile class from a `.csv` NIR scan file using a pretrained neural network.
-- **client.py**: Sends the predicted class label (0–5) to the Ubuntu machine via TCP socket.
+- [`label_data.py`](./windows/label_data.py): Predicts textile class from a `.csv` NIR scan file using a pretrained neural network.
+- [`client.py`](./windows/client.py): Sends the predicted class label (0–5) to the Ubuntu machine via TCP socket.
 
 ### Ubuntu (UR5 Arm + Camera)
-- **main.py**: Receives the label from Windows, detects objects using a Realsense camera + YOLO, and commands the UR5 arm to sort the textile based on class.
+- [`main.py`](./UR5_ubuntu/main.py): Receives the label from Windows, detects objects using a Realsense camera + YOLO, and commands the UR5 arm to sort the textile based on class.
 
 ---
 
@@ -52,7 +52,7 @@ realtime/
    ```
 
 ### Ubuntu Machine
-1. Make sure Realsense SDK, and UR5 network control are set up.
+1. Make sure your UR5 and Realsense are set up.
 2. Launch the script:
    ```bash
    python3 main.py
@@ -77,6 +77,6 @@ realtime/
 
 ---
 
-##  Related
-- Model used in `label_data.py` is found in: `SO1/SO1.3/model/multi_output_model_v5_20.h5`
-
+##  Related Files
+- Model used in [`label_data.py`](./windows/label_data.py) is located at [`SO1/SO1.3/model/multi_output_model_v5_20.h5`](../SO1/SO1.3/model/multi_output_model_v5_20.h5)
+- Socket port and host must match between [`client.py`](./windows/client.py) and [`main.py`](./UR5_ubuntu/main.py)
