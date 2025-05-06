@@ -33,4 +33,4 @@ Each subfolder corresponds to a specific subtask and contains:
 
 ##  Back to Project Overview
 
-[🔙 Return to Main README](../README.md)
+[ Return to Main README](../README.md)
