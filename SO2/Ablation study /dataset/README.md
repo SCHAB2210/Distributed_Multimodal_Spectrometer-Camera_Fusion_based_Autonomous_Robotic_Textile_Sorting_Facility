@@ -1,0 +1,1 @@
+You can find the dataset in SO2.3–6, depending on your task whether you are working with material classification or combined classification using either HR or SR images.
