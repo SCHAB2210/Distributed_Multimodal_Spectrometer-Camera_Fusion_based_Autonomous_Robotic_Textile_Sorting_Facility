@@ -137,14 +137,14 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import GlobalAveragePooling2D
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# -------------------------------
+
 # 1. Set up your dataset path
-# -------------------------------
+
 dataset_path = r'C:\Users\amirs\Desktop\backup\camera\models\dataset\material SR'  # Change this if needed
 
-# -------------------------------
+
 # 2. Create a data generator
-# -------------------------------
+
 datagen = ImageDataGenerator(rescale=1./255)
 batch_size = 32
 target_size = (256, 256)  # VGG16 default input size
@@ -157,17 +157,17 @@ data_generator = datagen.flow_from_directory(
     shuffle=False
 )
 
-# -------------------------------
+
 # 3. Load the pre-trained model for feature extraction
-# -------------------------------
+
 base_model = VGG16(weights='imagenet', include_top=False, input_shape=(256, 256, 3))
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
 feature_extractor = Model(inputs=base_model.input, outputs=x)
 
-# -------------------------------
+
 # 4. Extract features from dataset
-# -------------------------------
+
 steps = data_generator.samples // batch_size
 if data_generator.samples % batch_size != 0:
     steps += 1
@@ -178,9 +178,9 @@ features = feature_extractor.predict(data_generator, steps=steps, verbose=1)
 # Extract labels and reshape them to (N,1)
 labels = data_generator.classes.reshape(-1, 1)  # <-- Fix: Reshaping labels to (N,1)
 
-# -------------------------------
+
 # 5. Save Features and Labels in a Single HDF5 File
-# -------------------------------
+
 h5_file_path = r'C:\Users\amirs\Desktop\MAS500\MAS500\camera\models\Ensemble Learning\feature\material\SR features\features_VGG16.h5'
 
 with h5py.File(h5_file_path, 'w') as h5f:
