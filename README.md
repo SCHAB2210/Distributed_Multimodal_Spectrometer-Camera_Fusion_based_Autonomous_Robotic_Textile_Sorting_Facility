@@ -11,7 +11,7 @@ Follow these steps to clone the project and install dependencies:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/SCHAB2210/handover_MAS500.git
+git clone https://github.com/SCHAB2210/Distributed_Multimodal_Spectrometer-Camera_Fusion_based_Autonomous_Robotic_Textile_Sorting_Facility.git
 cd handover_MAS500
 
 # 2. Create a virtual environment
